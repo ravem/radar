@@ -2,792 +2,1115 @@
 <html lang="en">
 
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!--,maximum-scale=1.0, user-scalable=no"  -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style>
+        body {
+            font-family: "Roboto";
+            font-weight: 400;
+        }
 
-
-  <style>
-    body {
-      font- family: "Roboto"font-weight: 400
-    }
-
-    .custom-btn {
-      border: none;
-    }
-
-    .custom-icon {
-      color: white;
-      font-size: 26px;
-    }
-
-    .custom-icon:hover {
-      color: cyan;
-    }
-  </style>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Weather forecast tools</title>
-
+        /*         #arpa-button {
+            color: white;
+            display: block;
+        } */
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css"
+        integrity="sha256-mkiM+ysrCOrjd7E5S55/Zs+2iocxoDlF9zQVyMxiDv8=" crossorigin="anonymous" />
+    <title>Weather</title>
 </head>
 
 <body>
+    <div style="background-color: #000000;">
+        <div>
+            <nav class="navbar navbar-dark bg-dark">
+                <span class="navbar-brand"> Weather </span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-3">
+                    <p class="text-white">Un elenco di strumenti utili al monitoraggio e alla previsione meteorologica.
+                    </p>
+                    <p class="text-white" style="font-size: 80%">
+                        I contenuti sono propriet&agrave; dei rispettivi creatori, che ne detengono tutti i diritti.
+                        <p class="text-white" style="font-size: 80%"><i class="fas fa-heart"></i> to Flaav & Dade for
+                            helping</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <br>
+        </div>
 
-  <div style="background-color: #000000;">
-
-
-    <div>
-      <nav class="navbar navbar-dark style=" background-color: #000000;"">
-        <span class="navbar-brand"> Weather forecast and monitoring tools</span>
-        <button class="navbar-toggler custom-btn" type="button" data-toggle="collapse"
-          data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fas fa-cloud-sun-rain custom-icon"></i>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#windy" style="color: white">
+            Windy dati meteo
         </button>
-      </nav>
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="p-3" style="background-color: #101010;">
-          <p class="text-white">Un elenco di tool utili al monitoraggio e alla previsione meteorologica. </p>
-          <p class="text-white" style="font-size: 90%">Grazie a Davide e Flavius per avermi prestato la loro esperienza
-            &#128521; </p>
-          <p class="text-white" style="font-size: 90%">I contenuti sono proprietà dei rispettivi creatori. </p>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <div>
-      <br>
-    </div>
-
-
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpav_latest" style="color: white">
-
-      ARPAV bollettino previsioniale mattinata odierna
-
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="arpav_latest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">ARPAV bollettino previsioniale mattinata odierna</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div>
-              <img src="http://www.arpa.veneto.it/previsioni/it/images/map_MV_1.png.jpg" width="100%" height="100%">
+        <!-- Modal -->
+        <div class="modal fade" id="windy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" style="height: 90vh;" role="document">
+                <div class="modal-content" style="height: 90vh;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Windy dati meteo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 100%; width: 100%;">
+                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
+                            <iframe class="embed-responsive-item"
+                                src="https://embed.windy.com/embed2.html?lat=42.585&lon=11.865&detailLat=45.416&detailLon=11.882&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=true&type=map&location=coordinates&detail=true&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1"
+                                style="position:absolute; top:0px; bottom:0px; right:0px; width:100%; border: none; margin:0; padding:0; overflow: hidden; z-index:999999;"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://www.windy.com
+                    </div>
+                </div>
             </div>
-            </br>
-            <div>
-              <img src="https://www.arpa.veneto.it/previsioni/it/images/h_banner_MV_1.png"
-                style="max-width: 50%; max-height: 50%; display:block; margin:auto;">
+        </div>
+        </br>
+
+<!--         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#widget" style="color: white">
+            ARPAV widget meteo
+        </button>
+        <div class="modal fade" id="widget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV widget meteo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-1by1 height=150%" >
+                            <iframe class="embed-responsive-item"
+                                src="http://www2.arpa.veneto.it/meteo/iframes/en/iframe_O_10.html"
+                                style="position:absolute; top:0px; bottom:0px; right:0px; width:100%; border: none; margin:0; padding:0; overflow: hidden; z-index:999999;"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://arpa.veneto.it
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            Il bollettino viene emesso ogni giorno alle ore 13 con aggiornamenti alle ore 16 e alle ore 9 della mattina
-            seguente
-            <br>fonte http://www.arpa.veneto.it
-          </div>
         </div>
-      </div>
-    </div>
-    </br>
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpav_afternoon" style="color: white">
+        </br> -->
 
-      ARPAV bollettino previsioniale pomeriggio odierno
-
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="arpav_afternoon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">ARPAV bollettino previsioniale pomeriggio odierno</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div>
-              <img src="https://www.arpa.veneto.it/previsioni/it/images/map_MV_2.png.jpg" width="100%" height="100%">
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#PC" style="color: white">
+            Radar Protezione Civile
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="PC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" style="height: 90vh;" role="document">
+                <div class="modal-content" style="height: 90vh;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Radar Protezione Civile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 100%; width: 100%;">
+                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
+                            <iframe class="embed-responsive-item"
+                                src="http://www.protezionecivile.gov.it/radar-dpc/#/pages/dashboard"
+                                style="position:absolute; top:0px; bottom:0px; right:0px; border: none; margin:0; padding:0; overflow: hidden; z-index:999999;"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://www.protezionecivile.gov.it/
+                    </div>
+                </div>
             </div>
-            </br>
-            <div>
-              <img src="https://www.arpa.veneto.it/previsioni/it/images/h_banner_MV_2.png"
-                style="max-width: 50%; max-height: 50%; display:block; margin:auto;">
+        </div>
+        </br>        
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpav_mp3" style="color: white">
+            ARPAV ultimo bollettino MP3
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="arpav_mp3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV ultimo bollettino MP3</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class='audio-container'>
+                            <audio controls>
+                                <source src="https://www.arpa.veneto.it/previsioni/audio/meteoveneto.mp3"
+                                    type="audio/mp3">
+                            </audio>
+
+                            <style>
+                                .audio-container {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center
+                                }
+                            </style>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        <br>fonte http://www.arpa.veneto.it
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            Il bollettino viene emesso ogni giorno alle ore 13 con aggiornamenti alle ore 16 e alle ore 9 della mattina
-            seguente
-            <br>fonte http://www.arpa.veneto.it
-          </div>
         </div>
-      </div>
-    </div>
-    </br>
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#tomorrow_morning" style="color: white">
-      ARPAV Previsioni domani mattina
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="tomorrow_morning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">ARPAV Previsioni domani mattina</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div>
-              <img src="https://www.arpa.veneto.it/previsioni/it/images/map_MV_3.png.jpg" width="100%" height="100%">
+        </br>
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpav_latest" style="color: white">
+            ARPAV ultimo bollettino previsioniale
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="arpav_latest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV ultimo bollettino</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <img src="https://www.arpa.veneto.it/previsioni/it/images/map_MV_0.png.jpg" width="100%"
+                                height="100%">
+                        </div>
+                        </br>
+                        <div>
+                            <img src="https://www.arpa.veneto.it/previsioni/it/images/h_banner_MV_0.png"
+                                style="max-width: 50%; max-height: 50%; display:block; margin:auto;">
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        Il bollettino viene emesso ogni giorno alle ore 13 con aggiornamenti alle ore 16 e alle ore 9
+                        della mattina
+                        seguente
+                        <br>fonte http://www.arpa.veneto.it
+                    </div>
+                </div>
             </div>
-            </br>
-            <div>
-              <img src="https://www.arpa.veneto.it/previsioni/it/images/h_banner_MV_3.png.jpg"
-                style="max-width: 50%; max-height: 50%; display:block; margin:auto;">
+        </div>
+        </br>
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#tomorrow_morning"
+            style="color: white">
+            ARPAV Previsioni domani mattina
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="tomorrow_morning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV domani mattina</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <img src="https://www.arpa.veneto.it/previsioni/it/images/map_MV_1.png.jpg" width="100%"
+                                height="100%">
+                        </div>
+                        </br>
+                        <div>
+                            <img src="https://www.arpa.veneto.it/previsioni/it/images/h_banner_MV_1.png.jpg"
+                                style="max-width: 50%; max-height: 50%; display:block; margin:auto;">
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        Il bollettino viene emesso ogni giorno alle ore 13 con aggiornamenti alle ore 16 e alle ore 9
+                        della mattina
+                        seguente
+                        <br>fonte http://www.arpa.veneto.it
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            Il bollettino viene emesso ogni giorno alle ore 13 con aggiornamenti alle ore 16 e alle ore 9 della mattina
-            seguente
-            <br>fonte http://www.arpa.veneto.it
-          </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#tomorrow_evening" style="color: white">
-      ARPAV Previsioni domani pomeriggio
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="tomorrow_evening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">ARPAV Previsioni domani mattina</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div>
-              <img src="https://www.arpa.veneto.it/previsioni/it/images/map_MV_4.png.jpg" width="100%" height="100%">
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#tomorrow_evening"
+            style="color: white">
+            ARPAV Previsioni domani pomeriggio
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="tomorrow_evening" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV domani pomeriggio</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <img src="https://www.arpa.veneto.it/previsioni/it/images/map_MV_2.png.jpg" width="100%"
+                                height="100%">
+                        </div>
+                        </br>
+                        <div>
+                            <img src="https://www.arpa.veneto.it/previsioni/it/images/h_banner_MV_2.png.jpg"
+                                style="max-width: 50%; max-height: 50%; display:block; margin:auto;">
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        Il bollettino viene emesso ogni giorno alle ore 13 con aggiornamenti alle ore 16 e alle ore 9
+                        della mattina
+                        seguente
+                        <br>fonte http://www.arpa.veneto.it
+                    </div>
+                </div>
             </div>
-            </br>
-            <div>
-              <img src="https://www.arpa.veneto.it/previsioni/it/images/h_banner_MV_4.png.jpg"
-                style="max-width: 50%; max-height: 50%; display:block; margin:auto;">
+        </div>
+        </br>
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#aria" style="color: white">
+            ARPAV Dati qualit&agrave; aria
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="aria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV dati qualita aria</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://www.arpa.veneto.it/immagini/pm25/600/pm2_5_28000002_1.jpg?id=2822845112"
+                            width="100%" height="100%">
+                        <br>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://www.arpa.veneto.it/immagini/pm10/600/pm10_28000001_11.jpg?id=0315773586"
+                            width="100%" height="100%">
+                        <br>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://www.arpa.veneto.it/immagini/O3/O3_28000002_1.png?c=1726" width="100%"
+                            height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://arpa.veneto.it
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            Il bollettino viene emesso ogni giorno alle ore 13 con aggiornamenti alle ore 16 e alle ore 9 della mattina
-            seguente
-            <br>fonte http://www.arpa.veneto.it
-          </div>
         </div>
-      </div>
-    </div>
-    </br>
-
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#today_alert" style="color: white">
-      Allerta meteo per la giornata odierna
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="today_alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Allerta meteo per la giornata odierna</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js"></script>
-            <script>
-              moment.locale('it')
-              var data = moment().format('YYMMDD')
-              document.write("<img src=\"" + "http://www.meteoalarm.eu/maps/IT-" + data + "-x800.gif" +
-                " \"width=\"100%\" >");
-            </script>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte: http://www.meteoalarm.eu
-          </div>
-        </div>
-      </div>
-    </div>
-    </br>
-
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#tomorrow_alert" style="color: white">
-      Allerta meteo per la giornata di domani
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="tomorrow_alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Allerta meteo per la giornata di domani</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js"></script>
-            <script>
-              moment.locale('it')
-              var data = moment().add(1, 'days').format('YYMMDD');
-              document.write("<img src=\"" + "http://www.meteoalarm.eu/maps/IT-" + data + "-x800.gif" +
-                " \"width=\"100%\" >");
-            </script>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte: http://www.meteoalarm.eu
-          </div>
-        </div>
-      </div>
-    </div>
-    </br>
-
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#aria" style="color: white">
-      ARPAV Dati qualit&agrave; aria
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="aria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Dati qualita aria</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://www.arpa.veneto.it/immagini/pm25/600/pm2_5_28000002_1.jpg?id=2822845112" width="100%"
-              height="100%">
-            <br>
-          </div>
-          <div class="modal-body">
-            <img src="http://www.arpa.veneto.it/immagini/pm10/600/pm10_28000001_11.jpg?id=0315773586" width="100%"
-              height="100%">
-            <br>
-          </div>
-          <div class="modal-body">
-            <img src="http://www.arpa.veneto.it/immagini/O3/O3_28000002_1.png?c=1726" width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://arpa.veneto.it
-          </div>
-        </div>
-      </div>
-    </div>
-    </br>
-
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpav_thunderstorms"
-      style="color: white">
-      ARPAV situazione temporali
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="arpav_thunderstorms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">ARPAV situazione temporali</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="embed-responsive embed-responsive-1by1">
-              <iframe class="embed-responsive-item" src="http://radaralert.arpa.veneto.it/public"
-                style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
+        </br>
+        
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#idro" style="color: white">
+            ARPAV Dati idrometrici
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="idro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> ARPAV Dati idrometrici</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.arpa.veneto.it/immagini/idro/300005755.jpg" width="100%" height="100%">
+                        <br>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.arpa.veneto.it/immagini/idro/300005838.jpg" width="100%" height="100%">
+                        <br>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.arpa.veneto.it/immagini/idro/300005777.jpg" width="100%" height="100%">
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.arpa.veneto.it/immagini/idro/300005833.jpg" width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://arpa.veneto.it
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://www.arpa.veneto.it
-          </div>
         </div>
-      </div>
-    </div>
-    </br>
-
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#estofex" style="color: white">
-      ESTOFEX storm forecast
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="estofex" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">ESTOFEX storm forecast</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://www.estofex.org/forecasts/tempmap/.png" width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte: http://www.estofex.org
-          </div>
+        </br>
+        
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#air_temp" style="color: white">
+            ARPAV dati temperatura aria Veneto
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="air_temp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV temperatura aria Veneto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://www.arpa.veneto.it/bollettini/meteo/h24/img09/Mappa_TEMP.jpg" width="100%"
+                            height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://www.arpa.veneto.it
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#meteoam" style="color: white">
-      METEOAM previsioni Padova
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="meteoam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">METEOAM previsioni Padova</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="embed-responsive embed-responsive-1by1">
-            <iframe class="embed-responsive-item" src="http://www.meteoam.it/widget/localita/132"
-              style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://www.arpa.veneto.it
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpa-table" style="color: white"
+            id="arpa-button">
+            ARPAV Bollettino Pollini
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="arpa-table" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" style="height: 90vh;" role="document">
+                <div class="modal-content" style="height: 90vh;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Dati sui pollini, stazione di Padova </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="table-responsive" style="height: 100%; width: 100%;">
+                        <table class="table" id="arpa-table-container">
+                            <tr>
+                                <th> Allergene </th>
+                                <th> Data </th>
+                                <th> Concentrazione </th>
+                                <th> Previsione </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte https://www.arpa.veneto.it
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#lightning" style="color: white">
-      Mappa fulmini in tempo reale
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="lightning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Mappa fulmini in tempo reale</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://www.lamma.rete.toscana.it/mybo/blitzortung.php?map=6" width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://www.lamma.rete.toscana.it
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpav_thunderstorms"
+            style="color: white">
+            ARPAV situazione temporali
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="arpav_thunderstorms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" style="height: 90vh;" role="document">
+                <div class="modal-content" style="height: 90vh;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV situazione temporali</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 100%; width: 100%;">
+                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
+                            <iframe class="embed-responsive-item" src="http://radaralert.arpa.veneto.it/public"
+                                style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://www.arpa.veneto.it
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
-
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#last_hour_rain" style="color: white">
-      Precipitazioni in Veneto nella ultima ora
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="last_hour_rain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Precipitazioni in Veneto nella ultima ora</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://meteopsn.altervista.org/prec1h_rt.png" width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://meteopsn.altervista.org
-          </div>
+        </br>
+     
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#estofex" style="color: white">
+            ESTOFEX storm forecast
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="estofex" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ESTOFEX storm forecast</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://www.estofex.org/forecasts/tempmap/.png" width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte: http://www.estofex.org
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#gfs" style="color: white">
-      Spaghi GFS Pd Ve Ro
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="gfs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Spaghi GFS Pd Ve Ro</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://old.wetterzentrale.de/pics/MS_1245_ens.png" width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte:http://www.wetterzentrale.de
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#severe" style="color: white">
+            Severe Weather forecast
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="severe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Severe Weather forecast</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
+                        </script>
+                        <script>
+                            moment.locale('it')
+                            var datasevere = moment().format('YYYYMMDD')
+                            document.write("<img src=\"" + "https://www.severe-weather.eu/wp-content/gallery/outlooks/" + datasevere + "_day1.jpg" +
+                                " \"width=\"100%\" >");
+                        </script>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte: http://www.severe-weather.eu
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#meteociel" style="color: white">
-      Meteociel ultimo run GFS
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="meteociel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Meteociel ultimo run GFS</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js"></script>
-            <script>
-              moment.locale('it')
-              var ora = moment.utc().format('HH')
-              var data = moment().format('YYYYMMDD')
-              if (ora > 00 && ora <= 06) {
-                var run = (00);
-              } else if (ora > 06 && ora <= 12) {
-                var run = (06);
-              } else if (ora > 12 && ora <= 18) {
-                var run = (12);
-              } else if ((ora > 18 && ora < 24) || ora == 00) {
-                var run = (18);
-              }
-              document.write("<img src= \"http://modeles7.meteociel.fr/modeles/gens/runs/" + data + run +
-                "/graphe3_2001___11.8818_45.4152_Padova.gif" + "\" width=\"100%\" >");
-            </script>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte: http://www.meteociel.fr
-          </div>
+
+        
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#today_alert" style="color: white">
+            Allerta meteo per la giornata odierna
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="today_alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Allerta meteo per oggi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
+                        </script>
+                        <script>
+                            moment.locale('it')
+                            var data = moment().format('YYMMDD')
+                            document.write("<img src=\"" + "http://www.meteoalarm.eu/maps/IT-" + data + "-x800.gif" +
+                                " \"width=\"100%\" >");
+                        </script>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte: http://www.meteoalarm.eu
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#air_temp" style="color: white">
-      ARPAV dati temperatura aria Veneto
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="air_temp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">ARPAV dati temperatura aria Veneto</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://www.arpa.veneto.it/bollettini/meteo/h24/img09/Mappa_TEMP.jpg" width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://www.arpa.veneto.it
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#tomorrow_alert"
+            style="color: white">
+            Allerta meteo per la giornata di domani
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="tomorrow_alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Allerta meteo per domani</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
+                        </script>
+                        <script>
+                            moment.locale('it')
+                            var data = moment().add(1, 'days').format('YYMMDD');
+                            document.write("<img src=\"" + "http://www.meteoalarm.eu/maps/IT-" + data + "-x800.gif" +
+                                " \"width=\"100%\" >");
+                        </script>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte: http://www.meteoalarm.eu
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
+        
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#snow72" style="color: white">
-      WRF Meteonetwork accumulo neve a 72h
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="snow72" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">WRF Meteonetwork accumulo neve a 72h</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://www.meteonetwork.it/models/malawi/wrf/output/cmcc/wrf_nord_snowtot.png" width="100%"
-              height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte: http://www.meteonetwork.it
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#pretemp" style="color: white">
+            Pretemp previsioni temporali
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="pretemp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" style="height: 90vh;" role="document">
+                <div class="modal-content" style="height: 90vh;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 100%; width: 100%;">
+                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
+                        </script>
+                        <script>
+                            moment.locale('it')
+                            var monthpretemp = moment().format('MMM')
+                            var datapretemp = moment().format('DD_MM_YYYY')
+                            var annopretemp = moment().format('YYYY')
+                            var monthletterepretemp = moment().format('MMMM')
+                            document.write("<iframe class=\"embed-responsive-item\" width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"http://www.pretemp.it/archivio/"  + annopretemp + "/" +"prev_" + datapretemp + ".html\" />");
+                            </script>
+
+<!--                         <iframe class="embed-responsive-item" src="http://www.radareu.cz/"
+                            style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe> -->
+                    
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://pretemp.altervista.org/
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#heatwave" style="color: white">
-      Bollettino sulle ondate di calore
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="heatwave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Bollettino sulle ondate di calore</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://www.salute.gov.it/portale/caldo/img/MAPPA_CALDO_RENDER.png" width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://http://www.salute.gov.it
-          </div>
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#lightning" style="color: white">
+            Mappa fulmini in tempo reale
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="lightning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" style="height: 90vh;" role="document">
+                <div class="modal-content" style="height: 90vh;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Mappa fulmini in tempo reale</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 100%; width: 100%;">
+                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
+                            <iframe class="embed-responsive-item" src="https://map.blitzortung.org/?y#7/45.342/11.852"
+                                style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://www.blitzortung.org
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#Meteoblue" style="color: white">
-      Meteogramma Meteoblue provincia di Padova
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="Meteoblue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Meteogramma Meteoblue provincia di Padova</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img
-              src="https://www.meteoblue.com/meteogram-web?lon=11.962051&lat=45.380465&asl=2&tz=Europe_Rome&lang=it&look=CELSIUS,KILOMETER_PER_HOUR"
-              width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://meteoblue.com
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#last_hour_rain"
+            style="color: white">
+            Precipitazioni Veneto
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="last_hour_rain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Precipitazioni Veneto in realtime</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://cdn1.meteonetwork.it/models/malawi/wnetwork/mappe_realtime/realtime_prec_triveneto.png"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://www.meteonetwork.it
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#yr" style="color: white">
-      Meteogramma Yr.no per Saonara
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="yr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Meteogramma Yr.no per Saonaraa</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="https://www.yr.no/place/Italy/Veneto/Saonara/avansert_meteogram.png" width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://yr.no
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#radareu" style="color: white">
+            European rainfall radar map
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="radareu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" style="height: 90vh;" role="document">
+                <div class="modal-content" style="height: 90vh;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> European rainfall radar map</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 100%; width: 100%;">
+                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
+                        <iframe class="embed-responsive-item" src="http://www.radareu.cz/"
+                            style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
+                    
+                        </div>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://www.radareu.cz/
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#pc" style="color: white">
-      Bollettini criticità Protezione Civile
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="pc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Bollettini criticità Protezione Civile</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="embed-responsive embed-responsive-1by1">
-            <iframe class="embed-responsive-item"
-              src="http://www.protezionecivile.gov.it/mapViewerPR/?layerName=SIT:t_bcr_20190903_1518_tomorrow&layerTitle=Criticit%C3%A0%2FALLERTA"
-              style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://www.protezionecivile.gov.it/
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#wetter_suolo" style="color: white">
+            Wetterzentrale dati al suolo
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="wetter_suolo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Wetterzentrale dati al suolo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://old.wetterzentrale.de/pics/GFSOP06_45.0000_12.0000_211.png" width="100%"
+                            height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte: http://www.meteociel.fr
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#effe" style="color: white">
-      Effemeridi Padova
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="effe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Effemeridi Padova</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img style="-webkit-user-select: none;"
-              src="http://www.meteotitano.net/common/sun_graph_plus.php?longitudine=-11.8768&amp;lat=45.4064&amp;alt=12&amp;dUTC=0&amp;luogo=Padova&amp;quando=now"
-              width="100%" height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://www.meteotitano.net
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#gfs" style="color: white">
+            Wetterzentrale GFS Padova
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="gfs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Wetterzentrale GFS</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.wetterzentrale.de/de/ens_image.php?geoid=72880&var=201&run=0&model=gfs&member=ENS&bw="
+                            width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte:http://www.wetterzentrale.de
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#meteosat" style="color: white">
-      Animazione nuvole Meteosat
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="meteosat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Animazione nuvole Meteosat</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="http://api.sat24.com/animated/IT/visual/1/W_dot_%20Europe%20Standard%20Time/340547" width="100%"
-              height="100%">
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://meteoblue.com
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#meteociel" style="color: white">
+            Meteociel ensamble GEFS Padova
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="meteociel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Meteociel GEFS</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://modeles.meteociel.fr/modeles/gens/graphe_ens3.php?x=&y=&run=0&lat=45.3206&lon=11.98&ext=1&type=0"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte: http://www.meteociel.fr
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#quake" style="color: white">
-      Terremoti riscontrati nelle ultime 24h
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="quake" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> Terremoti riscontrati nelle ultime 24h</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <script>
-              var dateTime = new Date().getTime();
-              var timestamp = Math.floor(dateTime / 1000);
-              document.write(
-                "<img src= \"https://static1.emsc.eu/Images/map_zoom/WEBMAPS/24H/TEUROMED.24hours.jpg?dt=" +
-                timestamp + "\" width=\"100%\" >");
-            </script>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://www.emsc.eu
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#snow72" style="color: white">
+            WRF Meteonetwork accumulo neve 48h
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="snow72" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">WRF accumulo neve 48h</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://cdn1.meteonetwork.it/models/malawi/wrf/output/lastrun/wrf_nord_snowtot.png"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte: http://www.meteonetwork.it
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
+        </br>
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#radareu" style="color: white">
-      European rainfall radar map
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="radareu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"> European rainfall radar map</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="embed-responsive embed-responsive-1by1">
-            <iframe class="embed-responsive-item" src="http://www.radareu.cz/"
-              style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
-          </div>
-          <div class="modal-footer" style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-            fonte http://www.radareu.cz/
-          </div>
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#heatwave" style="color: white">
+            Bollettino sulle ondate di calore
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="heatwave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ondate di calore</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://www.salute.gov.it/portale/caldo/img/MAPPA_CALDO_RENDER.png" width="100%"
+                            height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://http://www.salute.gov.it
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </br>
-    </br>
-  </div>
+        </br>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#Meteoblue" style="color: white">
+            Meteogramma Meteoblue Padova
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="Meteoblue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Meteogramma Meteoblue Padova</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.meteoblue.com/meteogram-web?lon=11.962051&lat=45.380465&asl=2&tz=Europe_Rome&lang=it&look=CELSIUS,KILOMETER_PER_HOUR"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://meteoblue.com
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#yr" style="color: white">
+            Meteogramma Yr.no Saonara
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="yr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Meteogramma Yr.no Saonara</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.yr.no/place/Italy/Veneto/Saonara/avansert_meteogram.png" width="100%"
+                            height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://yr.no
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+        
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#Wett_PD" style="color: white">
+            Meteogramma Wetterzentrale Padova
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="Wett_PD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Meteogramma WRZ Padova</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.wetterzentrale.de/maps/MS_115450_g05.png" width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://wetterzentrale.de
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+        
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#meteosat" style="color: white">
+            Animazione nuvole Meteosat
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="meteosat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Animazione nuvole Meteosat</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="http://api.sat24.com/animated/IT/visual/1/W_dot_%20Europe%20Standard%20Time/340547"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://meteoblue.com
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#quake" style="color: white">
+            Terremoti ultime 24h
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="quake" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Terremoti ultime 24h</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <script>
+                            var dateTime = new Date().getTime();
+                            var timestamp = Math.floor(dateTime / 1000);
+                            document.write(
+                                "<img src= \"https://static1.emsc.eu/Images/map_zoom/WEBMAPS/24H/TEUROMED.24hours.jpg?dt=" +
+                                timestamp + "\" width=\"100%\" >");
+                        </script>
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://www.emsc.eu
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+
+        </br>
+        </br>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+
+
+    <footer class="page-footer font-small">
+        <!-- Copyright -->
+        <div class="bg-dark p-1">
+            <div class="footer-copyright text-left  text-white"><i class="fa fa-copyright" aria-hidden="true"></i> 2020
+                copyright by me
+            </div>
+        </div>
+        <!-- Copyright -->
+
+
+        <script type="module">
+
+            // con questa variabile puoi aggiungere stazioni dentro la tabella,
+      // esempio ["Padova","Belluno","Milano"]
+      const stazioniDiInteresse = [ "Padova" ];
+
+      // questo è L'url da dove arrivano i dati
+      const XML_URL = "https://www.arpa.veneto.it/xmlfiles/pollini.xml";
+
+      // id della tabella per visualizzare i dati
+      const TABLE_ROOT = "arpa-table-container";
+      
+      // delle funzioni per prendere, processare, visualizzare i dati:
+      const arpaService = {
+        // questa funzione carica i dati dall'url
+        async fetchData ({ xmlURL = "" }) {
+          const data = await fetch(xmlURL);
+          const text = await data.text();
+          return new DOMParser().parseFromString(text, "text/xml");
+        },
+        // questa funzione trasforma i dati da xml in un js object
+        transformData(xmlData, criteria = []) {
+          const tabella = [];
+          const stazioni = [...xmlData.getElementsByTagName("STAZIONE")];
+          const stazioniInteressate = stazioni.filter(stazione => criteria.indexOf(stazione.getAttribute("nome_stazione")) >= 0);
+
+          stazioniInteressate.forEach(stazione => {
+            const nomeStazione = stazione.getAttribute("nome_stazione");
+            const particelle = [...stazione.getElementsByTagName("PARTICELLA")];
+            const giornate = particelle.forEach((giorni) => {
+              const nomeParticella = giorni.getAttribute("nome_part");
+              const data = [...giorni.getElementsByTagName("GIORNO")];
+              data.forEach((giorno) => {
+                const concentrazione = giorno.getAttribute("concentrazione");
+                const date = giorno.getAttribute("data");
+                const previsione = giorno.getAttribute("previsione");
+                tabella.push({
+                  nomeStazione,
+                  nomeParticella,
+                  concentrazione,
+                  date,
+                  previsione
+                });
+              });
+            });
+          });
+          return tabella;
+        },
+        // questa mette i dati dentro la tabella
+        populateTable (data, element) {
+          const fragment = document.createDocumentFragment();
+          data.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+
+              <td> ${row.nomeParticella} </td>
+              <td> ${row.date} </td>
+              <td> ${row.concentrazione} </td>
+              <td> ${row.previsione || "N/D"} </td>
+            `;
+            fragment.appendChild(tr);
+          });
+          element.appendChild(fragment);
+        },
+        async fetchAndPopulateData ({
+          xmlURL = "",
+          criteria = [],
+          tableRoot,
+        }) {
+          const parsedData = await this.fetchData({ xmlURL });
+          const transformedData = this.transformData(parsedData, criteria);
+          this.populateTable(
+            transformedData,
+            typeof tableRoot === "string" ? document.getElementById(tableRoot) : tableRoot,
+          );
+        },
+      }
+
+      window.onload = () => {
+        const button = document.getElementById("arpa-button");
+        button.addEventListener("click", async () => {
+          arpaService.fetchAndPopulateData({
+            xmlURL: XML_URL,
+            criteria: stazioniDiInteresse,
+            tableRoot: document.getElementById(TABLE_ROOT),
+          })
+        });
+      }
+
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-  </script>
-
-
-
-  <footer class="page-footer font-small">
-    <!-- Copyright -->
-    <div class="p-1" style="background-color: #101010;">
-      <div class="footer-copyright text-left p-1 text-white">Copylefted under <a
-          href="https://www.gnu.org/licenses/gpl-3.0.html" style="color: white">GPLv3</a>
-      </div>
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-
 </body>
 
 </html>
