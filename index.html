@@ -45,8 +45,6 @@
                     </p>
                     <p class="text-white" style="font-size: 80%">
                         I contenuti sono propriet&agrave; dei rispettivi creatori, che ne detengono tutti i diritti.
-                        <p class="text-white" style="font-size: 80%"><i class="fas fa-heart"></i> to Flaav & Dade for
-                            helping</p>
                     </p>
                 </div>
             </div>
@@ -85,34 +83,34 @@
         </div>
         </br>
 
-<!--         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#widget" style="color: white">
-            ARPAV widget meteo
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ventusky" style="color: white">
+            Ventusky dati meteo
         </button>
-        <div class="modal fade" id="widget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <!-- Modal -->
+        <div class="modal fade" id="ventusky" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
+            <div class="modal-dialog" style="height: 90vh;" role="document">
+                <div class="modal-content" style="height: 90vh;">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">ARPAV widget meteo</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ventusky dati meteo</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="embed-responsive embed-responsive-1by1 height=150%" >
-                            <iframe class="embed-responsive-item"
-                                src="http://www2.arpa.veneto.it/meteo/iframes/en/iframe_O_10.html"
-                                style="position:absolute; top:0px; bottom:0px; right:0px; width:100%; border: none; margin:0; padding:0; overflow: hidden; z-index:999999;"></iframe>
+                    <div class="modal-body" style="height: 100%; width: 100%;">
+                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
+                            <iframe class="embed-responsive-item" src="https://ventusky.com" 
+                            style=" position:absolute; top:0px; bottom:0px; right:0px; border: none; margin:0; padding:0; overflow: hidden; z-index:999999;"></iframe>
                         </div>
                     </div>
                     <div class="modal-footer"
                         style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-                        fonte http://arpa.veneto.it
+                        fonte https://ventusky.com
                     </div>
                 </div>
             </div>
         </div>
-        </br> -->
+        </br>
 
         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#PC" style="color: white">
             Radar Protezione Civile
@@ -130,9 +128,9 @@
                     </div>
                     <div class="modal-body" style="height: 100%; width: 100%;">
                         <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
-                            <iframe class="embed-responsive-item"
-                                src="http://www.protezionecivile.gov.it/radar-dpc/#/pages/dashboard"
-                                style="position:absolute; top:0px; bottom:0px; right:0px; border: none; margin:0; padding:0; overflow: hidden; z-index:999999;"></iframe>
+                            <iframe class="embed-responsive-item" src="https://radar.protezionecivile.it/#/pages/dashboard?update=c5249a11-9085-ff76-324c-8b1f4b1b88f9
+                                style=" position:absolute; top:0px; bottom:0px; right:0px; border: none; margin:0;
+                                padding:0; overflow: hidden; z-index:999999;"></iframe>
                         </div>
                     </div>
                     <div class="modal-footer"
@@ -142,7 +140,7 @@
                 </div>
             </div>
         </div>
-        </br>        
+        </br>
 
         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpav_mp3" style="color: white">
             ARPAV ultimo bollettino MP3
@@ -297,80 +295,37 @@
         </div>
         </br>
 
-        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#aria" style="color: white">
-            ARPAV Dati qualit&agrave; aria
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="aria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">ARPAV dati qualita aria</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="http://www.arpa.veneto.it/immagini/pm25/600/pm2_5_28000002_1.jpg?id=2822845112"
-                            width="100%" height="100%">
-                        <br>
-                    </div>
-                    <div class="modal-body">
-                        <img src="http://www.arpa.veneto.it/immagini/pm10/600/pm10_28000001_11.jpg?id=0315773586"
-                            width="100%" height="100%">
-                        <br>
-                    </div>
-                    <div class="modal-body">
-                        <img src="http://www.arpa.veneto.it/immagini/O3/O3_28000002_1.png?c=1726" width="100%"
-                            height="100%">
-                    </div>
-                    <div class="modal-footer"
-                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-                        fonte http://arpa.veneto.it
-                    </div>
-                </div>
-            </div>
-        </div>
-        </br>
-        
-        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#idro" style="color: white">
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#arpav_idro"
+            style="color: white">
             ARPAV Dati idrometrici
         </button>
         <!-- Modal -->
-        <div class="modal fade" id="idro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="arpav_idro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"> ARPAV Dati idrometrici</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">ARPAV Dati idrometrici</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="https://www.arpa.veneto.it/immagini/idro/300005755.jpg" width="100%" height="100%">
-                        <br>
-                    </div>
-                    <div class="modal-body">
-                        <img src="https://www.arpa.veneto.it/immagini/idro/300005838.jpg" width="100%" height="100%">
-                        <br>
-                    </div>
-                    <div class="modal-body">
-                        <img src="https://www.arpa.veneto.it/immagini/idro/300005777.jpg" width="100%" height="100%">
-                    </div>
-                    <div class="modal-body">
-                        <img src="https://www.arpa.veneto.it/immagini/idro/300005833.jpg" width="100%" height="100%">
+                        <div>
+                            <img src="https://wwwold.arpa.veneto.it/bollettini/meteo/h24/img14/Mappa_LIVIDRO.jpg?x=10153"
+                                width="100%" height="100%">
+                        </div>
                     </div>
                     <div class="modal-footer"
                         style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-                        fonte http://arpa.veneto.it
+
+                        <br>fonte http://www.arpa.veneto.it
                     </div>
                 </div>
             </div>
         </div>
         </br>
-        
+
         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#air_temp" style="color: white">
             ARPAV dati temperatura aria Veneto
         </button>
@@ -386,7 +341,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="http://www.arpa.veneto.it/bollettini/meteo/h24/img09/Mappa_TEMP.jpg" width="100%"
+                        <img src="https://wwwold.arpa.veneto.it/bollettini/meteo/h24/img14/Mappa_TEMP.jpg" width="100%"
                             height="100%">
                     </div>
                     <div class="modal-footer"
@@ -461,7 +416,7 @@
             </div>
         </div>
         </br>
-     
+
         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#estofex" style="color: white">
             ESTOFEX storm forecast
         </button>
@@ -502,94 +457,21 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
-                        </script>
-                        <script>
-                            moment.locale('it')
-                            var datasevere = moment().format('YYYYMMDD')
-                            document.write("<img src=\"" + "https://www.severe-weather.eu/wp-content/gallery/outlooks/" + datasevere + "_day1.jpg" +
-                                " \"width=\"100%\" >");
-                        </script>
+                    <div class="modal-body" style="height: 100%; width: 100%;">
+                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
+                            <iframe class="embed-responsive-item" src="https://www.eswd.eu/ewob/"
+                                style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
+                        </div>
                     </div>
                     <div class="modal-footer"
                         style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-                        fonte: http://www.severe-weather.eu
+                        fonte: https://www.eswd.eu/
                     </div>
                 </div>
             </div>
         </div>
         </br>
 
-
-        
-        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#today_alert" style="color: white">
-            Allerta meteo per la giornata odierna
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="today_alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Allerta meteo per oggi</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
-                        </script>
-                        <script>
-                            moment.locale('it')
-                            var data = moment().format('YYMMDD')
-                            document.write("<img src=\"" + "http://www.meteoalarm.eu/maps/IT-" + data + "-x800.gif" +
-                                " \"width=\"100%\" >");
-                        </script>
-                    </div>
-                    <div class="modal-footer"
-                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-                        fonte: http://www.meteoalarm.eu
-                    </div>
-                </div>
-            </div>
-        </div>
-        </br>
-
-        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#tomorrow_alert"
-            style="color: white">
-            Allerta meteo per la giornata di domani
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="tomorrow_alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Allerta meteo per domani</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
-                        </script>
-                        <script>
-                            moment.locale('it')
-                            var data = moment().add(1, 'days').format('YYMMDD');
-                            document.write("<img src=\"" + "http://www.meteoalarm.eu/maps/IT-" + data + "-x800.gif" +
-                                " \"width=\"100%\" >");
-                        </script>
-                    </div>
-                    <div class="modal-footer"
-                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-                        fonte: http://www.meteoalarm.eu
-                    </div>
-                </div>
-            </div>
-        </div>
-        </br>
-        
 
         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#pretemp" style="color: white">
             Pretemp previsioni temporali
@@ -606,20 +488,21 @@
                     </div>
                     <div class="modal-body" style="height: 100%; width: 100%;">
                         <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
-                        </script>
-                        <script>
-                            moment.locale('it')
-                            var monthpretemp = moment().format('MMM')
-                            var datapretemp = moment().format('DD_MM_YYYY')
-                            var annopretemp = moment().format('YYYY')
-                            var monthletterepretemp = moment().format('MMMM')
-                            document.write("<iframe class=\"embed-responsive-item\" width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"http://www.pretemp.it/archivio/"  + annopretemp + "/" +"prev_" + datapretemp + ".html\" />");
+                            <script
+                                src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
+                                </script>
+                            <script>
+                                moment.locale('it')
+                                var monthpretemp = moment().format('MMM')
+                                var datapretemp = moment().format('DD_MM_YYYY')
+                                var annopretemp = moment().format('YYYY')
+                                var monthletterepretemp = moment().format('MMMM')
+                                document.write(
+                                    "<iframe class=\"embed-responsive-item\" width=\"100%\" height=\"100%\" frameborder=\"0\" src=\"http://www.pretemp.it/archivio/" +
+                                    annopretemp + "/" + monthletterepretemp + "/" + "previsioni" + "/" +  datapretemp + ".html\">");
                             </script>
 
-<!--                         <iframe class="embed-responsive-item" src="http://www.radareu.cz/"
-                            style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe> -->
-                    
+                            
                         </div>
                     </div>
                     <div class="modal-footer"
@@ -705,14 +588,40 @@
                     </div>
                     <div class="modal-body" style="height: 100%; width: 100%;">
                         <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
-                        <iframe class="embed-responsive-item" src="http://www.radareu.cz/"
-                            style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
-                    
+                            <iframe class="embed-responsive-item" src="http://www.radareu.cz/"
+                                style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
+
                         </div>
                     </div>
                     <div class="modal-footer"
                         style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
                         fonte http://www.radareu.cz/
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#Wett_rain" style="color: white">
+            Wetterzentrale accumulo totale precipitazioni
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="Wett_rain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Wetterzentrale accumulo precipitazioni</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.wetterzentrale.de/maps/ARPOPIT06_12_18.png" width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://wetterzentrale.de
                     </div>
                 </div>
             </div>
@@ -734,7 +643,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="http://old.wetterzentrale.de/pics/GFSOP06_45.0000_12.0000_211.png" width="100%"
+                        <img src="https://www.wetterzentrale.de/maps/GFSOP12_45.0000_12.0000_211.png" width="100%"
                             height="100%">
                     </div>
                     <div class="modal-footer"
@@ -896,8 +805,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="https://www.yr.no/place/Italy/Veneto/Saonara/avansert_meteogram.png" width="100%"
-                            height="100%">
+                        <img src="https://www.yr.no/nb/innhold/2-6534223/meteogram.svg" width="100%" height="100%">
                     </div>
                     <div class="modal-footer"
                         style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
@@ -907,7 +815,7 @@
             </div>
         </div>
         </br>
-        
+
         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#Wett_PD" style="color: white">
             Meteogramma Wetterzentrale Padova
         </button>
@@ -933,7 +841,33 @@
             </div>
         </div>
         </br>
-        
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#Wett_nuvole" style="color: white">
+            Wetterzentrale copertura nuvolosa totale
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="Wett_nuvole" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Wetterzentrale copertura nuvolosa</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.wetterzentrale.de/maps/GFSOPIT12_6_24.png" width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://wetterzentrale.de
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+
         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#meteosat" style="color: white">
             Animazione nuvole Meteosat
         </button>
@@ -955,6 +889,32 @@
                     <div class="modal-footer"
                         style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
                         fonte http://meteoblue.com
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#solen" style="color: white">
+            Attivit&agrave; solare
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="solen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> Attivit&agrave; solare</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://www.solen.info/solar/images/solar.png" width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer"
+                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
+                        fonte http://solen.info
                     </div>
                 </div>
             </div>
@@ -1001,13 +961,13 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+        </script>
 
 
 
@@ -1024,93 +984,94 @@
         <script type="module">
 
             // con questa variabile puoi aggiungere stazioni dentro la tabella,
-      // esempio ["Padova","Belluno","Milano"]
-      const stazioniDiInteresse = [ "Padova" ];
+            // esempio ["Padova","Belluno","Milano"]
+            //modificato da Paolo prendendo il codice della stazione per comodità
+            const stazioniDiInteresse = ["PD01"];
 
-      // questo è L'url da dove arrivano i dati
-      const XML_URL = "https://www.arpa.veneto.it/xmlfiles/pollini.xml";
+            // questo è L'url da dove arrivano i dati
+            const XML_URL = "https://www.arpa.veneto.it/xmlfiles/pollini.xml";
+            // https://www.arpa.veneto.it/xmlfiles/pollini.xml
+            // id della tabella per visualizzare i dati
+            const TABLE_ROOT = "arpa-table-container";
 
-      // id della tabella per visualizzare i dati
-      const TABLE_ROOT = "arpa-table-container";
-      
-      // delle funzioni per prendere, processare, visualizzare i dati:
-      const arpaService = {
-        // questa funzione carica i dati dall'url
-        async fetchData ({ xmlURL = "" }) {
-          const data = await fetch(xmlURL);
-          const text = await data.text();
-          return new DOMParser().parseFromString(text, "text/xml");
-        },
-        // questa funzione trasforma i dati da xml in un js object
-        transformData(xmlData, criteria = []) {
-          const tabella = [];
-          const stazioni = [...xmlData.getElementsByTagName("STAZIONE")];
-          const stazioniInteressate = stazioni.filter(stazione => criteria.indexOf(stazione.getAttribute("nome_stazione")) >= 0);
+            // delle funzioni per prendere, processare, visualizzare i dati:
+            const arpaService = {
+                // questa funzione carica i dati dall'url
+                async fetchData({ xmlURL = "" }) {
+                    const data = await fetch(xmlURL);
+                    const text = await data.text();
+                    return new DOMParser().parseFromString(text, "text/xml");
+                },
+                // questa funzione trasforma i dati da xml in un js object
+                transformData(xmlData, criteria = []) {
+                    const tabella = [];
+                    const stazioni = [...xmlData.getElementsByTagName("STAZIONE")];
+                    const stazioniInteressate = stazioni.filter(stazione => criteria.indexOf(stazione.getAttribute("cod_stazione")) >= 0);
 
-          stazioniInteressate.forEach(stazione => {
-            const nomeStazione = stazione.getAttribute("nome_stazione");
-            const particelle = [...stazione.getElementsByTagName("PARTICELLA")];
-            const giornate = particelle.forEach((giorni) => {
-              const nomeParticella = giorni.getAttribute("nome_part");
-              const data = [...giorni.getElementsByTagName("GIORNO")];
-              data.forEach((giorno) => {
-                const concentrazione = giorno.getAttribute("concentrazione");
-                const date = giorno.getAttribute("data");
-                const previsione = giorno.getAttribute("previsione");
-                tabella.push({
-                  nomeStazione,
-                  nomeParticella,
-                  concentrazione,
-                  date,
-                  previsione
-                });
-              });
-            });
-          });
-          return tabella;
-        },
-        // questa mette i dati dentro la tabella
-        populateTable (data, element) {
-          const fragment = document.createDocumentFragment();
-          data.forEach(row => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
+                    stazioniInteressate.forEach(stazione => {
+                        const codStazione = stazione.getAttribute("cod_stazione");
+                        const particelle = [...stazione.getElementsByTagName("PARTICELLA")];
+                        const giornate = particelle.forEach((giorni) => {
+                            const nomeParticella = giorni.getAttribute("nome_part");
+                            const data = [...giorni.getElementsByTagName("GIORNO")];
+                            data.forEach((giorno) => {
+                                const concentrazione = giorno.getAttribute("concentrazione");
+                                const date = giorno.getAttribute("data");
+                                const previsione = giorno.getAttribute("previsione");
+                                tabella.push({
+                                    codStazione,
+                                    nomeParticella,
+                                    concentrazione,
+                                    date,
+                                    previsione
+                                });
+                            });
+                        });
+                    });
+                    return tabella;
+                },
+                // questa mette i dati dentro la tabella
+                populateTable(data, element) {
+                    const fragment = document.createDocumentFragment();
+                    data.forEach(row => {
+                        const tr = document.createElement("tr");
+                        tr.innerHTML = `
 
               <td> ${row.nomeParticella} </td>
               <td> ${row.date} </td>
               <td> ${row.concentrazione} </td>
               <td> ${row.previsione || "N/D"} </td>
             `;
-            fragment.appendChild(tr);
-          });
-          element.appendChild(fragment);
-        },
-        async fetchAndPopulateData ({
-          xmlURL = "",
-          criteria = [],
-          tableRoot,
-        }) {
-          const parsedData = await this.fetchData({ xmlURL });
-          const transformedData = this.transformData(parsedData, criteria);
-          this.populateTable(
-            transformedData,
-            typeof tableRoot === "string" ? document.getElementById(tableRoot) : tableRoot,
-          );
-        },
-      }
+                        fragment.appendChild(tr);
+                    });
+                    element.appendChild(fragment);
+                },
+                async fetchAndPopulateData({
+                    xmlURL = "",
+                    criteria = [],
+                    tableRoot,
+                }) {
+                    const parsedData = await this.fetchData({ xmlURL });
+                    const transformedData = this.transformData(parsedData, criteria);
+                    this.populateTable(
+                        transformedData,
+                        typeof tableRoot === "string" ? document.getElementById(tableRoot) : tableRoot,
+                    );
+                },
+            }
 
-      window.onload = () => {
-        const button = document.getElementById("arpa-button");
-        button.addEventListener("click", async () => {
-          arpaService.fetchAndPopulateData({
-            xmlURL: XML_URL,
-            criteria: stazioniDiInteresse,
-            tableRoot: document.getElementById(TABLE_ROOT),
-          })
-        });
-      }
+            window.onload = () => {
+                const button = document.getElementById("arpa-button");
+                button.addEventListener("click", async () => {
+                    arpaService.fetchAndPopulateData({
+                        xmlURL: XML_URL,
+                        criteria: stazioniDiInteresse,
+                        tableRoot: document.getElementById(TABLE_ROOT),
+                    })
+                });
+            }
 
-  </script>
+        </script>
 </body>
 
 </html>
