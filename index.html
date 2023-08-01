@@ -444,7 +444,7 @@
         </br>
 
         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#severe" style="color: white">
-            Severe Weather forecast
+            Previsione grandine e fulmini a 24 ore
         </button>
         <!-- Modal -->
         <div class="modal fade" id="severe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -452,20 +452,32 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Severe Weather forecast</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Previsione grandine e fulmini a 24 ore</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body" style="height: 100%; width: 100%;">
-                        <div class="embed-responsive embed-responsive-1by1" style="height: 100%; width: 100%;">
-                            <iframe class="embed-responsive-item" src="https://www.eswd.eu/ewob/"
-                                style="position:absolute; top:0px; bottom:0px; right:0px; width: 100%; border: none; margin:0; padding:0; overflow: hidden; height: 100%; z-index:999999;"></iframe>
-                        </div>
+                    <div class="modal-body">
+                            <script
+                                src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js">
+                                </script>
+                            <script>
+                                moment.locale('it')
+                                var annomeseierihail = moment().add(-1, 'days').format('YYYYMM')
+                                var oggihail = moment().format('YYYYMMDD')
+                                var ierihail = moment().add(-1, 'days').format('YYYYMMDD') 
+                                document.write(
+                                    "<img src=\"https://www.stormforecast.eu/map_images/models/archamos/" + annomeseierihail + "/" + ierihail  + "00" + "/" + "combi_paramcombi24_" + 
+                                    ierihail + "00" + "_"  +  oggihail + "06" + ".png\" width=\"100%\" height=\100%\">");
+                            
+                                </script>
+
+
+
                     </div>
                     <div class="modal-footer"
                         style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-                        fonte: https://www.eswd.eu/
+                        fonte: https://www.stormforecast.eu
                     </div>
                 </div>
             </div>
@@ -915,38 +927,6 @@
                     <div class="modal-footer"
                         style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
                         fonte http://solen.info
-                    </div>
-                </div>
-            </div>
-        </div>
-        </br>
-
-        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#quake" style="color: white">
-            Terremoti ultime 24h
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="quake" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"> Terremoti ultime 24h</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <script>
-                            var dateTime = new Date().getTime();
-                            var timestamp = Math.floor(dateTime / 1000);
-                            document.write(
-                                "<img src= \"https://static1.emsc.eu/Images/map_zoom/WEBMAPS/24H/TEUROMED.24hours.jpg?dt=" +
-                                timestamp + "\" width=\"100%\" >");
-                        </script>
-                    </div>
-                    <div class="modal-footer"
-                        style="font-family:sans-serif; font-style:normal; font-size:10px; padding-top:10px">
-                        fonte http://www.emsc.eu
                     </div>
                 </div>
             </div>
